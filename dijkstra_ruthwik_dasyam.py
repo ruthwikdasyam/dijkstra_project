@@ -276,7 +276,7 @@ for i,node in enumerate(closed_list):
 
 pygame.draw.circle(window,black,(node1_state[0],499-node1_state[1]),5) #plotting start node
 pygame.draw.circle(window,(50,220,50),(node1_state[0],499-node1_state[1]),3)
-time.sleep(1.5)
+time.sleep(1)
 # LOop to reflect the points in the path on the pygame window
 for i, point in enumerate(points_list):
         time.sleep(0.01)
