@@ -1,10 +1,8 @@
 from queue import PriorityQueue
 import numpy as np
-import matplotlib.pyplot as plt
-import heapq
 import pygame
-
 import time
+
 start_time = time.time() #  Initiating time
 
 print("\n--------------------------------------------------------------------------\n")
@@ -103,7 +101,7 @@ def backtrack(closedlist): # Function for backtracking
 #               END OF FUNCTIONS FOR ACTIONS AND BACKTRACKING 
 
 #Defining Obstacle Space
-print(" Preparing Map ..... ")
+print(" Please wait, Preparing Map ..... ")
 
 def obstacle(x,y): # Returns value >= 1, if a point is in obstacle space
     # x=state[0]
@@ -250,7 +248,7 @@ pygame.init()
 window = pygame.display.set_mode((1200,500)) # window size
 window.fill((200,200,200)) # filling it with color
 #initializing color
-white=(220,220,220)
+white=(230,230,230)
 black = (0,0,0)
 red = (225,50,50)
 blue = (105,135,235)
@@ -276,13 +274,17 @@ for i,node in enumerate(closed_list):
         if i%80==0: # rate to reflect the updates on the window
             pygame.display.flip()
 
-time.sleep(1)
+pygame.draw.circle(window,black,(node1_state[0],499-node1_state[1]),5) #plotting start node
+pygame.draw.circle(window,(50,220,50),(node1_state[0],499-node1_state[1]),3)
+time.sleep(1.5)
 # LOop to reflect the points in the path on the pygame window
 for i, point in enumerate(points_list):
         time.sleep(0.01)
         window.set_at((point[0],499-point[1]),black) # performing (499-x) to account for origin changes
         pygame.display.flip()
 
+pygame.draw.circle(window,black,(goal_state[0],499-goal_state[1]),5) #plotting end node
+pygame.draw.circle(window,red,(goal_state[0],499-goal_state[1]),3)
 
 
 print(" ------------------------ SUCCESSFULLT TRACKED ------------------------")
