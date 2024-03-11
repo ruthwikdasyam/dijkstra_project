@@ -47,10 +47,6 @@ def obstacle(x,y):
 # pygame.draw.polygon(surface, color2, ((625, 100), (755, 175), (755, 325), (625, 400), (495, 325),(495, 175)))
 
 # pygame.draw.rect(surface, color2, pygame.Rect(0,0,1200,500), 5)
-
-
-
-
  
 
 pygame.display.flip()
@@ -98,9 +94,6 @@ while run:
         run = False
     pygame.display.update()
 pygame.quit()
-
-
-
 
 
 # drawing rectangle
